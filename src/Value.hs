@@ -1,7 +1,7 @@
-{-# LANGUAGE DeriveGeneric        #-}
-{-# LANGUAGE FlexibleContexts     #-}
-{-# LANGUAGE OverloadedStrings    #-}
-{-# LANGUAGE UndecidableInstances #-}
+{-# LANGUAGE DeriveGeneric     #-}
+{-# LANGUAGE FlexibleContexts  #-}
+{-# LANGUAGE OverloadedStrings #-}
+
 module Value where
 
 import           Control.Applicative
@@ -22,7 +22,7 @@ instance ToJSON Dummy
 
 instance FromJSON Dummy
 
-instance (Show Dummy) => Riak.Resolvable Dummy where
+instance Riak.Resolvable Dummy where
     resolve a b = a
 
 byteString :: String -> L.ByteString
