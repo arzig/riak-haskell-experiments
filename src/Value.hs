@@ -1,19 +1,21 @@
-{-# LANGUAGE FlexibleContexts, UndecidableInstances, OverloadedStrings, DeriveGeneric #-}
+{-# LANGUAGE DeriveGeneric        #-}
+{-# LANGUAGE FlexibleContexts     #-}
+{-# LANGUAGE OverloadedStrings    #-}
+{-# LANGUAGE UndecidableInstances #-}
 module Value where
 
-import              Control.Monad
-import              Control.Applicative
-import              Data.Aeson
-import qualified    Data.Text as T
-import qualified    Network.Riak as Riak
-import              Network.Riak.Types
-import qualified    Data.ByteString.Lazy as L
-import              Data.ByteString.Char8
-                        (pack) 
-import              System.Environment (getArgs)
-import              GHC.Generics
+import           Control.Applicative
+import           Control.Monad
+import           Data.Aeson
+import           Data.ByteString.Char8 (pack)
+import qualified Data.ByteString.Lazy  as L
+import qualified Data.Text             as T
+import           GHC.Generics
+import qualified Network.Riak          as Riak
+import           Network.Riak.Types
+import           System.Environment    (getArgs)
 
-data Dummy = Dummy { a :: Double }  
+data Dummy = Dummy { a :: Double }
     deriving (Show, Generic)
 
 instance ToJSON Dummy
